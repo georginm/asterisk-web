@@ -1,10 +1,11 @@
 import React from 'react';
 
+import { Title } from './styles';
 /**
  * FC: Function Comonent
  */
 const Aors: React.FC = () => {
-    return <h1>Aors</h1>;
+    return <Title>Aors</Title>;
 };
 
 export default Aors;
