@@ -1,11 +1,19 @@
 import React from 'react';
 
-import { Title } from './styles';
 /**
  * FC: Function Comonent
  */
 const Aors: React.FC = () => {
-    return <Title>Aors</Title>;
+    return (
+        <>
+            <h1>Aors</h1>
+            <a href="Ramal">Teste</a>
+            <div>
+                <strong>Context</strong>
+                <p>Allow</p>
+            </div>
+        </>
+    );
 };
 
 export default Aors;
