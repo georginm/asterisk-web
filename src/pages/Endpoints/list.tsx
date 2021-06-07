@@ -18,7 +18,7 @@ const Endpoint: React.FC = () => {
 
     async function list() {
         const response = await api.get('endpoint/list/');
-        setEndpoint([...endpoints, ...response.data]);
+        setEndpoint([...response.data]);
     }
 
     useEffect(() => {
@@ -37,9 +37,10 @@ const Endpoint: React.FC = () => {
         getEndpoint('');
     }
 
-    // async function deleteEndpoint(id: string) {
-    //     await api.delete(`endpoint/delete/${id}`);
-    // }
+    async function deleteEndpoint(id: string) {
+        await api.delete(`endpoint/${id}`);
+        list();
+    }
 
     return (
         <>
@@ -70,7 +71,10 @@ const Endpoint: React.FC = () => {
                                 <FaEdit size={25} />
                             </Button>
 
-                            <Button id="delete">
+                            <Button
+                                id="delete"
+                                onClick={() => deleteEndpoint(endpoint.id)}
+                            >
                                 <MdDelete size={25} />
                             </Button>
                         </Item>
