@@ -59,20 +59,4 @@ export default createGlobalStyle`
             color: #a8a8b3;
         }
     }
-    button {
-        margin-top: 20px;
-        border-radius: 5px;
-        padding: 2px 5px;
-        width: 40%;
-        height: 40px;
-        background: #ff9e30;
-        color: #fdfefd;
-        border: 0;
-        font-weight: bold;
-        transition: background-color 0.2s;
-
-        &:hover {
-            background: #faae30;
-        }
-    }
 `;
