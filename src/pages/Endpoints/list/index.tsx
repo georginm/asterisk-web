@@ -1,20 +1,24 @@
+import React, { useState, useEffect, FormEvent } from 'react';
+import { Link } from 'react-router-dom';
+
+// Importando os icones
 import { MdDelete } from 'react-icons/md';
 import { FaEdit } from 'react-icons/fa';
-import React, { useState, useEffect, FormEvent } from 'react';
-import { EndpointList, Title, Form, Item } from './sytles';
-import Button from '../../components/Button';
 
-import api from '../../services/api';
+import { EndpointList, Item, Form } from './sytles';
 
-interface Endpoint {
-    id: string;
-    context: string;
-    allow: string;
-}
+// Importando componentes
+import api from '../../../services/api';
+import Input from '../../../components/Input ';
+import Button from '../../../components/Button';
+import Title from '../../../components/Title';
+
+// Importando tipagem
+import { Endpoints } from '../../../types';
 
 const Endpoint: React.FC = () => {
     const [seachEndpoint, getEndpoint] = useState('');
-    const [endpoints, setEndpoint] = useState<Endpoint[]>([]);
+    const [endpoints, setEndpoint] = useState<Endpoints[]>([]);
 
     async function list() {
         const response = await api.get('endpoint/list/');
@@ -46,26 +50,29 @@ const Endpoint: React.FC = () => {
         <>
             <EndpointList>
                 <Title>Endpoints</Title>
+
                 <Form onSubmit={handleSearchEndpoints}>
-                    <input
+                    <Input
+                        name="endpoint"
                         value={seachEndpoint}
                         onChange={(e) => getEndpoint(e.target.value)}
                         type="text"
                         placeholder="Buscar"
                     />
-                    <button type="submit">Pesquisar</button>
+
+                    <Button type="submit">Pesquisar</Button>
                 </Form>
 
                 {endpoints.map((endpoint) => (
                     <>
                         <Item key={endpoint.id}>
-                            <a href={`list/id=${endpoint.id}`}>
+                            <Link to={`list/id=${endpoint.id}`}>
                                 <strong>{endpoint.id}</strong>
-                                <div>
+                                <div id="informations">
                                     <strong>{endpoint.context}</strong>
                                     <p>{endpoint.allow}</p>
                                 </div>
-                            </a>
+                            </Link>
 
                             <Button id="update">
                                 <FaEdit size={25} />
