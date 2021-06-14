@@ -10,8 +10,8 @@ import AuthsList from '../pages/Auths/list';
 import Aors from '../pages/Aors';
 import AorsList from '../pages/Aors/list';
 
-import Queues from '../pages/Queue';
-import QueueList from '../pages/Queue/list';
+import Queues from '../pages/Queues';
+import QueueList from '../pages/Queues/list';
 
 import QueueMembers from '../pages/QueueMembers';
 import QueueMembersList from '../pages/QueueMembers/list';
