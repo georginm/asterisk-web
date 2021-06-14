@@ -57,4 +57,16 @@ export interface Branches {
     auth_type: string;
     password: string;
     username: string;
+    rewrite_contact: string;
+    rtp_symmetric: string;
+    force_rport: string;
+}
+
+export interface Extensions {
+    id: string;
+    context: string;
+    exten: string;
+    priority: 1;
+    app: string;
+    appdata: string;
 }
