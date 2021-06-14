@@ -16,7 +16,7 @@ import { QueueMembers } from '../../types';
 
 const QueueMember: React.FC = () => {
     // Adicionando item no DB
-    async function addNewQueueMember(data: QueueMembers) {
+    async function addNewQueueMember(data: QueueMembers, { reset }: any) {
         console.log(data);
         await api
             .post('queuemembers/create', { ...data })
@@ -26,6 +26,7 @@ const QueueMember: React.FC = () => {
             .catch((error) => {
                 console.log(error);
             });
+        reset();
     }
     return (
         <>

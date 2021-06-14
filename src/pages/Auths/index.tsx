@@ -16,7 +16,7 @@ import { Auths } from '../../types';
 
 const Auth: React.FC = () => {
     // Adicionando item no DB
-    async function addNewAuth(data: Auths) {
+    async function addNewAuth(data: Auths, { reset }: any) {
         await api
             .post('auth/create', { ...data })
             .then((response) => {
@@ -25,6 +25,8 @@ const Auth: React.FC = () => {
             .catch((error) => {
                 console.log(error);
             });
+
+        reset();
     }
     return (
         <>

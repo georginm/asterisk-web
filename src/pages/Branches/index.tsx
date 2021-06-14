@@ -76,11 +76,17 @@ const Queue: React.FC<Branches> = () => {
                                         <strong>{`Context: `}</strong>
                                         <strong>{`Disallow: `}</strong>
                                         <strong>{`Allow: `}</strong>
+
+                                        <strong>{`Rewrite Contact: `}</strong>
+                                        <strong>{`Rtp Symmetric: `}</strong>
+                                        <strong>{`Force Rport: `}</strong>
                                         <strong>{`Direct Media: `}</strong>
+
                                         <strong>{`Auth: `}</strong>
                                         <strong>{`Auth Type: `}</strong>
                                         <strong>{`Username: `}</strong>
                                         <strong>{`Password: `}</strong>
+
                                         <strong>{`Aors: `}</strong>
                                         <strong>{`Max Contacts: `}</strong>
                                     </div>
@@ -90,11 +96,17 @@ const Queue: React.FC<Branches> = () => {
                                         <p>{item.context}</p>
                                         <p>{item.disallow}</p>
                                         <p>{item.allow}</p>
+
+                                        <p>{item.rewrite_contact}</p>
+                                        <p>{item.rtp_symmetric}</p>
+                                        <p>{item.force_rport}</p>
                                         <p>{item.direct_media}</p>
+
                                         <p>{item.auth}</p>
                                         <p>{item.auth_type}</p>
                                         <p>{item.username}</p>
                                         <p>{item.password}</p>
+
                                         <p>{item.aors}</p>
                                         <p>{item.max_contacts}</p>
                                     </div>

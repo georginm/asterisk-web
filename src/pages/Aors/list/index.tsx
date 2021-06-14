@@ -70,7 +70,7 @@ const Aor: React.FC<Aors> = () => {
                                 <strong>{aor.id}</strong>
                                 <div id="informations">
                                     <div>
-                                        <strong>{`Máximo de contatos: `}</strong>
+                                        <strong>{`Max Contacts: `}</strong>
                                     </div>
                                     <div>
                                         <p>{aor.max_contacts}</p>

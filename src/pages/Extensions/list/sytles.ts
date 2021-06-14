@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const QueuesList = styled.div`
+export const EndpointList = styled.div`
     margin-top: 80px;
     width: 100%;
     display: block;
@@ -40,8 +40,7 @@ export const Item = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 20px;
-    padding: 10px 0;
+    margin-top: 10px;
 
     transition: transform 0.3s;
 
@@ -55,6 +54,7 @@ export const Item = styled.div`
         display: flex;
         align-items: center;
         justify-content: center;
+        padding-left: 10px;
         color: #3d3d4d;
     }
 
@@ -62,9 +62,9 @@ export const Item = styled.div`
         display: flex;
         justify-content: center;
         border-radius: 5px;
-        margin: 10px;
+        margin: 5px;
         padding: 20px 10px;
-        width: 70px;
+        max-width: 70px;
         height: 100%;
 
         color: #fff;
@@ -74,28 +74,23 @@ export const Item = styled.div`
     }
 
     #informations {
-        width: 100%;
-        display: flex;
-        align-items: center;
-        float: right;
-        padding: 0 20px;
+        max-width: 100%;
+        width: 90%;
 
-        div {
-            width: 50%;
-            display: flex;
-            flex-direction: column;
-        }
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
 
         strong {
-            font-size: 16px;
-            color: #4f4f4f;
+            font-size: 18px;
+            color: #3d3d4d;
         }
 
         p {
-            margin-left: 40px;
-            float: right;
-            font-size: 16px;
+            font-size: 15px;
             color: #a8a8b3;
+            margin-top: 4px;
         }
     }
 

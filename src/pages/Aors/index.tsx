@@ -16,15 +16,17 @@ import { Aors } from '../../types';
 
 const Aor: React.FC = () => {
     // Adicionando item no DB
-    async function addNewAor(data: Aors) {
+    async function addNewAor(data: Aors, { reset }: any) {
         await api
-            .post('aor/create', { ...data })
+            .post('aors/create', { ...data })
             .then((response) => {
                 console.log(response);
             })
             .catch((error) => {
                 console.log(error);
             });
+
+        reset();
     }
     return (
         <>

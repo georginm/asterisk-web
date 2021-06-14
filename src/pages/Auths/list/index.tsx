@@ -72,7 +72,7 @@ const Auth: React.FC<Auths> = () => {
                                     <div>
                                         <strong>{`Login: `}</strong>
                                         <strong>{`Senha: `}</strong>
-                                        <strong>{`Autenticação: `}</strong>
+                                        <strong>{`Auth Type: `}</strong>
                                     </div>
                                     <div>
                                         <p>{auth.username}</p>

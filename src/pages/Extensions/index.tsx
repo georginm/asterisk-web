@@ -11,14 +11,14 @@ import Title from '../../components/Title';
 // Importando Api Axios
 import api from '../../services/api';
 
-// Importando Typagem do Endpoint
-import { Endpoints } from '../../types';
+// Importando Typagem do Extension
+import { Extensions } from '../../types';
 
-const Endpoint: React.FC = () => {
+const Extension: React.FC = () => {
     // Adicionando item no DB
-    async function addNewEndpoint(data: Endpoints, { reset }: any) {
+    async function addNewExtension(data: Extensions, { reset }: any) {
         await api
-            .post('endpoint/create', { ...data })
+            .post('extensions/create', { ...data })
             .then((response) => {
                 console.log(response);
             })
@@ -30,29 +30,13 @@ const Endpoint: React.FC = () => {
     }
     return (
         <>
-            <Title>Cadastrar Endpoint</Title>
-            <Form onSubmit={addNewEndpoint}>
-                <Field name="id" type="text" placeholder="Endpoint" />
-                <Field name="transport" type="text" placeholder="Transport" />
+            <Title>Cadastrar Extension</Title>
+            <Form onSubmit={addNewExtension}>
+                <Field name="id" type="text" placeholder="Extension" />
+                <Field name="exten" type="text" placeholder="exten" />
                 <Field name="context" type="text" placeholder="Context" />
                 <Field name="disallow" type="text" placeholder="Disallow" />
                 <Field name="allow" type="text" placeholder="Allow" />
-                <Field
-                    name="rewrite_contact"
-                    type="text"
-                    placeholder="Rewrite Contact"
-                />
-                <Field
-                    name="rtp_symmetric"
-                    type="text"
-                    placeholder="Rtp Symmetric"
-                />
-                <Field
-                    name="force_rport"
-                    type="text"
-                    placeholder="Force Rport"
-                />
-
                 <Field
                     name="direct_media"
                     type="text"
@@ -61,12 +45,12 @@ const Endpoint: React.FC = () => {
                 <Field name="auth" type="text" placeholder="Auth" />
                 <Field name="aors" type="text" placeholder="Aors" />
                 {/* Adicionar argumento da função a seguir */}
-                <Button type="submit" onClick={() => addNewEndpoint}>
-                    Cadastrar Endpoint
+                <Button type="submit" onClick={() => addNewExtension}>
+                    Cadastrar Extension
                 </Button>
             </Form>
         </>
     );
 };
 
-export default Endpoint;
+export default Extension;
